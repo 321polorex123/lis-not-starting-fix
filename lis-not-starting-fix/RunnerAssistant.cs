@@ -9,7 +9,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Windows;
 
 namespace lis_not_starting_fix
@@ -60,7 +59,7 @@ namespace lis_not_starting_fix
 
         public event EventHandler<NextInstallationReachedEventArgs> NextInstallationReached;
         public event EventHandler<InstallationFinishedEventArgs> InstallationFinished;
-        
+
         public RunnerAssistant()
         {
             runner.Logger = new DummyLoggingProvider();
