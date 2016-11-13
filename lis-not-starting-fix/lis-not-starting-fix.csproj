@@ -15,6 +15,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +37,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>lis_not_starting_fix.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -43,7 +51,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -56,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="RunnerAssistant.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,6 +95,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,9 +107,38 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
+    <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Data\vcredist2008sp1x64\vcredist_x64.exe" />
+    <EmbeddedResource Include="Resources\Data\vcredist2008sp1x86\vcredist_x86.exe" />
+    <EmbeddedResource Include="Resources\Data\vcredist2010sp1x64\vcredist_x64.exe" />
+    <EmbeddedResource Include="Resources\Data\vcredist2010sp1x86\vcredist_x86.exe" />
+    <EmbeddedResource Include="Resources\Data\vcredist2012up4x64\vcredist_x64.exe" />
+    <EmbeddedResource Include="Resources\Data\vcredist2012up4x86\vcredist_x86.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OPE\Helpers\OpenSupportEngine.Helpers.csproj">
+      <Project>{18625596-1d13-4778-92f5-713a65389910}</Project>
+      <Name>OpenSupportEngine.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OPE\Logging\OpenSupportEngine.Logging.csproj">
+      <Project>{af8267e3-08ff-4dba-aeb1-20eee4b96fe1}</Project>
+      <Name>OpenSupportEngine.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OPE\TaskRunner\OpenSupportEngine.TaskRunner.csproj">
+      <Project>{63001663-0130-4341-a297-9a108c133249}</Project>
+      <Name>OpenSupportEngine.TaskRunner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.1.28.3\build\Fody.targets" Condition="Exists('..\packages\Fody.1.28.3\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.1.28.3\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.28.3\build\Fody.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
