@@ -1,0 +1,9 @@
+[submodule "OPE/Logging"]
+	path = OPE/Logging
+	url = https://github.com/OpenSupportEngine/Logging.git
+[submodule "OPE/TaskRunner"]
+	path = OPE/TaskRunner
+	url = https://github.com/OpenSupportEngine/TaskRunner.git
+[submodule "OPE/Helpers"]
+	path = OPE/Helpers
+	url = https://github.com/OpenSupportEngine/Helpers.git

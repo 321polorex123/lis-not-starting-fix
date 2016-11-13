@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lis-not-starting-fix", "lis-not-starting-fix\lis-not-starting-fix.csproj", "{F9569417-DEB5-4E22-B8F7-ABD41F668723}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSupportEngine.Logging", "OPE\Logging\OpenSupportEngine.Logging.csproj", "{AF8267E3-08FF-4DBA-AEB1-20EEE4B96FE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSupportEngine.TaskRunner", "OPE\TaskRunner\OpenSupportEngine.TaskRunner.csproj", "{63001663-0130-4341-A297-9A108C133249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSupportEngine.Helpers", "OPE\Helpers\OpenSupportEngine.Helpers.csproj", "{18625596-1D13-4778-92F5-713A65389910}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{F9569417-DEB5-4E22-B8F7-ABD41F668723}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9569417-DEB5-4E22-B8F7-ABD41F668723}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9569417-DEB5-4E22-B8F7-ABD41F668723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8267E3-08FF-4DBA-AEB1-20EEE4B96FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8267E3-08FF-4DBA-AEB1-20EEE4B96FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8267E3-08FF-4DBA-AEB1-20EEE4B96FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8267E3-08FF-4DBA-AEB1-20EEE4B96FE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63001663-0130-4341-A297-9A108C133249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63001663-0130-4341-A297-9A108C133249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63001663-0130-4341-A297-9A108C133249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63001663-0130-4341-A297-9A108C133249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18625596-1D13-4778-92F5-713A65389910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18625596-1D13-4778-92F5-713A65389910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18625596-1D13-4778-92F5-713A65389910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18625596-1D13-4778-92F5-713A65389910}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
